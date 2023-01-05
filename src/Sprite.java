@@ -98,12 +98,12 @@ public class Sprite {
 	public void move(Component c){
 		// move to the right or left - speed will be positive
 		if (!isDead && ((x_coordinate > - (2*imageResource.getImageOffset()) && x_direction == -2 || x_direction == -5) ||
-				(x_coordinate + imageResource.getImage().getIconWidth() + imageResource.getImageOffset() < c.getWidth() && (x_direction == 2 || x_direction == 5) )))
-			x_coordinate += (x_direction);
+				(x_coordinate + imageResource.getImage().getIconWidth() + imageResource.getImageOffset() < c.getWidth() && (x_direction == 2 || x_direction == 5) )));
+			
 		// jump
 		else if (!isDead && (y_coordinate > 0 && y_direction == -1) || 
-				(y_coordinate + imageResource.getImage().getIconWidth() < c.getHeight() && y_direction == 1 ))
-			y_coordinate += (y_direction);
+				(y_coordinate + imageResource.getImage().getIconWidth() < c.getHeight() && y_direction == 1 ));
+		
 
 		if(jumpCounter >= 0 && jumpCounter < 45) {
 			jumpCounter++;

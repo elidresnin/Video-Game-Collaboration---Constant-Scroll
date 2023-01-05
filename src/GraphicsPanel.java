@@ -110,10 +110,10 @@ public class GraphicsPanel extends JPanel implements KeyListener{
 			System.out.println("stop");
 			sprite.stop_Vertical();
 		}
-		
+
 		for(int i = 0; i < items.size(); i++)
 			items.get(i).move(this);
-		
+
 		this.repaint();
 	}
 
@@ -125,22 +125,10 @@ public class GraphicsPanel extends JPanel implements KeyListener{
 	@Override
 	public void keyPressed(KeyEvent e) {
 
-		if(e.getKeyCode() == KeyEvent.VK_RIGHT)
-			sprite.walkRight();
-		else if(e.getKeyCode() == KeyEvent.VK_LEFT)
-			sprite.walkLeft();
-		else if(e.getKeyCode() == KeyEvent.VK_UP)
-			sprite.moveUp();
-		else if(e.getKeyCode() == KeyEvent.VK_DOWN && !(sprite.collision(item) && sprite.getY() < item.getY()))
-			sprite.moveDown();
-		else if(e.getKeyCode() == KeyEvent.VK_SPACE)
-			sprite.run();
-		else if(e.getKeyCode() == KeyEvent.VK_J)
+
+		if(e.getKeyCode() == KeyEvent.VK_SPACE)
 			sprite.jump();
-		else if(e.getKeyCode() == KeyEvent.VK_D) {
-			playSound("src/sounds/bump.WAV");
-			sprite.die();	
-		}
+
 	}
 
 	// This function will play the sound "fileName".
